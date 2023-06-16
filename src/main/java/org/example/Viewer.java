@@ -1,14 +1,16 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
 class Viewer {
     private String nickname;
     private int age;
-    private int moviesWatched;
+    private List<Cinema> watchedMovies;
 
-    public Viewer(String nickname, int age, int moviesWatched) {
+    public Viewer(String nickname, int age) {
         this.nickname = nickname;
         this.age = age;
-        this.moviesWatched = moviesWatched;
+        this.watchedMovies = new ArrayList<>();
     }
 
     public String getNickname() {
@@ -19,7 +21,11 @@ class Viewer {
         return age;
     }
 
+    public void addWatchedMovie(Cinema movie) {
+        watchedMovies.add(movie);
+    }
+
     public int getMoviesWatched() {
-        return moviesWatched;
+        return watchedMovies.size();
     }
 }
